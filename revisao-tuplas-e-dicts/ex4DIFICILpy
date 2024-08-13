@@ -2,7 +2,7 @@ numbers = ()
 even_num = []
 for x in range (4):
     numbers = numbers + (
-        (int(input('Digite um número: '))) 
+        (int(input('Digite um número: '))) # LÓGICA DISSO ESTÁ ESCRITA ABAIXO (LEMBRAR DELA):
                ,)
     # O parêntese e a vírgula são necessários para criar uma tupla com um elemento,
     # pois em Python, uma tupla com um elemento precisa da vírgula para ser 
