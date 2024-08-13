@@ -11,7 +11,7 @@ for i in range (5):
         'idade': idade,
         'telefone': telefone }
     
-    agenda.append(usuario)
+    agenda.append(usuario)    # SABER SE PODE ISSO AQ OU TEM OUTRO JEITO DE FAZER
 
 
 for i in range (len(agenda)):
