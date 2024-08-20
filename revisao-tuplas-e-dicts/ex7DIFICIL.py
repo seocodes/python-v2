@@ -11,7 +11,7 @@ for i in range (3):
 
 # Iterar sobre a lista de dicionários (alunos)
 for aluno in alunos:
-    if aluno['media'] >= 7:
+    if aluno['media'] >= 7:  # Pois já tá dentro do dicionário por causa do for anterior
         print(f"{aluno['nome']} foi aprovado!")
         # Note que aqui, "aluno" é o mesmo nome da variável do for, mas isso não interfere!
         # Isso ocorre porque "aluno" é um dicionário, e "aluno['nome']" está acessando um valor dentro desse dicionário
