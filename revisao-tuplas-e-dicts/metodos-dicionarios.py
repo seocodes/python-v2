@@ -61,7 +61,7 @@ filmes = [
 ]
 
 print(filmes)
-print(filmes[1].items()) #printa todo o primeiro dict
+print(filmes[1].items()) #printa todo o segundo dict
 print(filmes[0]['genre']) #printa ficção
 print(filmes[2]['name'])  #output: se beber nao case
 print(filmes[0].values()) #output: homem de ferro de ficção
