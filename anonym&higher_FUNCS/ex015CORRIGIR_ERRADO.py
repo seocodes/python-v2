@@ -10,8 +10,8 @@ while True:
     if sair.upper() == 'S':
         break
     receitas.append(receita)
-    despesas.append(despesa)
-    lucro = list(map(lambda x,y: x-y , receitas ,despesas))
+    despesas.append(despesa)         
+    lucro = list(map(lambda x,y: x-y , receitas ,despesas))   #ta errado eu acho
     lucroAnual.append(lucro)
 
 
