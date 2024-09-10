@@ -1,7 +1,6 @@
 lucroMensal = []
 receitas = []
 despesas = []
-lucroAnual = []
 
 while True:
     receita = float(input('Digite a receita desse mês: '))
@@ -12,7 +11,6 @@ while True:
     receitas.append(receita)
     despesas.append(despesa)         
     lucro = list(map(lambda x,y: x-y , receitas ,despesas))   #ta errado eu acho
-    lucroAnual.append(lucro)
 
 
 lucroAnual = sum(lucro)/len(lucro)
