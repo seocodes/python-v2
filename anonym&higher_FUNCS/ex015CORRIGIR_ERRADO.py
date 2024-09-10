@@ -9,9 +9,9 @@ while True:
     if sair.upper() == 'S':
         break
     receitas.append(receita)
-    despesas.append(despesa)         
-    lucro = list(map(lambda x,y: x-y , receitas ,despesas))   #ta errado eu acho
+    despesas.append(despesa)       
 
-
+    
+lucro = list(map(lambda x,y: x-y , receitas ,despesas))
 lucroAnual = sum(lucro)/len(lucro)
 print(f'O lucro médio anual foi de: {lucroAnual}')
