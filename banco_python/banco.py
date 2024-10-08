@@ -13,11 +13,11 @@ cursor = conexao_banco.cursor()
 # CREATE - READ - UPDATE - DELETE
 
 #CREATE
-# nome = input('Digite o nome do produto: ')
-# valor = float(input('Digite o valor do produto: '))
-# comando_sql = f'INSERT INTO produtos(nome_produto , valor_produto) VALUES ("{nome}" , {valor})' #Lembra do bagulho de aspas simples e aspas duplas
-# cursor.execute(comando_sql)
-# conexao_banco.commit()
+nome = input('Digite o nome do produto: ')
+valor = float(input('Digite o valor do produto: '))
+comando_sql = f'INSERT INTO produtos(nome_produto , valor_produto) VALUES ("{nome}" , {valor})' #Lembra do bagulho de aspas simples e aspas duplas
+cursor.execute(comando_sql)
+conexao_banco.commit()
 
 #READ
 comando_sql4 = f'SELECT * FROM produtos'
@@ -51,8 +51,8 @@ for linha in read_table:
             print('Opção inválida')
 
 # #DELETE
-# id_delete = int(input('Digite o ID que quer deletar: '))
-# comando_sql3 = f'DELETE FROM produtos  WHERE id_produtos = "{id_delete}"'
-# cursor.execute(comando_sql3)
-# conexao_banco.commit()
+id_delete = int(input('Digite o ID que quer deletar: '))
+comando_sql3 = f'DELETE FROM produtos  WHERE id_produtos = "{id_delete}"'
+cursor.execute(comando_sql3)
+conexao_banco.commit()
 
