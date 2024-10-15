@@ -10,15 +10,20 @@ conexao_banco = mysql.connector.connect(
 cursor = conexao_banco.cursor()
 
 def cadastrarCarros():
-    global id_carro
     id_carro = int(input('ID:  '))
-    marca = input('Marca do carro: ').lower().capitalize()
-    modelo =  input('Modelo do carro: ').lower().capitalize()
-    ano = int(input('Ano: '))
-    cor = input('Cor do carro: ').lower().capitalize()
-    insertSQL = f'INSERT INTO carro(id_carro,marca,modelo,ano,cor) VALUES ({id_carro} , "{marca}" , "{modelo}", {ano} , "{cor}")'
-    cursor.execute(insertSQL)
-    conexao_banco.commit()
+    viewSQL = f'SELECT * FROM produtos WHERE id_carro = {id_carro}' #Pra ver se existe, se não existir, o viewSQL retorna nada (0)
+    cursor.execute(viewSQL)
+    read_table = cursor.fetchall()  #Essa variável armazena os dados do SELECT
+    if len(read_table) <= 0:  #Se for menor ou igual a zero, ou seja, não tiver dados, pode adicionar as coisas
+        marca = input('Marca do carro: ').lower().capitalize()
+        modelo =  input('Modelo do carro: ').lower().capitalize()
+        ano = int(input('Ano: '))
+        cor = input('Cor do carro: ').lower().capitalize()
+        insertSQL = f'INSERT INTO carro(id_carro,marca,modelo,ano,cor) VALUES ({id_carro} , "{marca}" , "{modelo}", {ano} , "{cor}")'
+        cursor.execute(insertSQL)
+        conexao_banco.commit()
+    else:   #Se não for menor ou igual a zero, quer dizer que há dados, ou seja, o ID já tá cadastrado!
+        print('ID já existe')
 
 def excluirCarros():
     viewSQL = f'SELECT * FROM carro'
