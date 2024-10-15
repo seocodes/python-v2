@@ -24,6 +24,10 @@ def cadastrarCarros():
         conexao_banco.commit()
     else:   #Se não for menor ou igual a zero, quer dizer que há dados, ou seja, o ID já tá cadastrado!
         print('ID já existe')
+#OBS IMPORTANTE: Tem outras maneiras de verificar, como em um LOOP, que está mais abaixo nesse exercício e nos outros também
+#A diferença é que no LOOP é para coincidir, e aqui o SELECT tem que ter o WHERE do id, para no if len() buscar somente
+# a linha daquele ID e ver se tem dados ou não.
+
 
 def excluirCarros():
     viewSQL = f'SELECT * FROM carro'
